@@ -1,16 +1,16 @@
 #include <iostream>
 #include <vector>
-#include <map>
+#include <unordered_map>
 
 // Problem: Two Sum.
 // Accepted. 
-// Runtime = 8 ms (Beats 84.13% of users with C++).
-// Memory = 11.11 MB (Beats 16.33% of users with C++).
+// Runtime = 3 ms (Beats 99.43% of users with C++).
+// Memory = 10.81 MB (Beats 33.67% of users with C++).
 
 class Solution {
 public:
     std::vector<int> twoSum(std::vector<int>& nums, int target) {
-        std::map<int, int> mp;
+        std::unordered_map<int, int> mp;
 
         for (size_t i = 0; i < nums.size(); ++i) {
             int element = nums[i];
