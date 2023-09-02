@@ -3,9 +3,9 @@
 #include <map>
 
 // Problem: Two Sum.
-// Accepted.
-// Runtime = 13 ms (Beats 63.76% of users with C++).
-// Memory = 11.23 MB (Beats 13.71% of users with C++).
+// Accepted. 
+// Runtime = 8 ms (Beats 84.13% of users with C++).
+// Memory = 11.11 MB (Beats 16.33% of users with C++).
 
 class Solution {
 public:
@@ -14,23 +14,20 @@ public:
 
         for (size_t i = 0; i < nums.size(); ++i) {
             int element = nums[i];
-            int calc = target - element;
 
-            auto it = mp.find(calc);
+            auto it = mp.find(target - element);
 
             if (it == mp.end()) {
                 // Not found.
-                std::pair<int, int> p1(element, i);
-                mp.insert(p1);
+                mp.insert(std::pair<int, int>(element, i));
             }
             else {
                 // Found.
-                std::vector<int> answer = {static_cast<int>(it->second), static_cast<int>(i)};
-                return answer;
+                return std::vector<int>{it->second, static_cast<int>(i)};
             }
         }
 
-        // Placedholder. Realistically there's always an answer.
+        // Realistically there's always an answer.
         std::vector<int> result;
 
         return result;
